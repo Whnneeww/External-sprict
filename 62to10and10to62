@@ -1,0 +1,256 @@
+sub DecimalTo62digit {
+  my $seed = shift;
+   
+  chomp($seed);
+  return undef if $seed =~ m/[^0-9]/;
+   
+  my $ans = int($seed / 36);
+  my $rem = $seed % 36;
+   
+  if($rem == 10){
+    $rem = 'A';
+    }elsif($str eq '11'){
+      $str = B;
+    }elsif($str eq '12'){
+      $str = C;
+    }elsif($str eq '13'){
+      $str = D;
+    }elsif($str eq '14'){
+      $str = E;
+    }elsif($str eq '15'){
+      $str = F;
+    }elsif($str eq '16'){
+      $str = G;
+    }elsif($str eq '17'){
+      $str = H;
+    }elsif($str eq '18'){
+      $str = I;
+    }elsif($str eq '19'){
+      $str = J;
+    }elsif($str eq '20'){
+      $str = K;
+    }elsif($str eq '21'){
+      $str = L;
+    }elsif($str eq '22'){
+      $str = M;
+    }elsif($str eq '23'){
+      $str = N;
+    }elsif($str eq '24'){
+      $str = O;
+    }elsif($str eq '25'){
+      $str = P;
+    }elsif($str eq '26'){
+      $str = Q;
+    }elsif($str eq '27'){
+      $str = R;
+    }elsif($str eq '28'){
+      $str = S;
+    }elsif($str eq '29'){
+      $str = T;
+    }elsif($str eq '30'){
+      $str = U;
+    }elsif($str eq '31'){
+      $str = V;
+    }elsif($str eq '32'){
+      $str = W;
+    }elsif($str eq '33'){
+      $str = X;
+    }elsif($str eq '34'){
+      $str = Y;
+    }elsif($str eq '35'){
+      $str = Z;
+    }elsif($str eq '36'){
+      $str = a;
+    }elsif($str eq '37'){
+      $str = b;
+    }elsif($str eq '38'){
+      $str = c;
+    }elsif($str eq '39'){
+      $str = d;
+    }elsif($str eq '40'){
+      $str = e;
+    }elsif($str eq '41'){
+      $str = f;
+    }elsif($str eq '42'){
+      $str = g;
+    }elsif($str eq '43'){
+      $str = h;
+    }elsif($str eq '44'){
+      $str = i;
+    }elsif($str eq '45'){
+      $str = j;
+    }elsif($str eq '46'){
+      $str = k;
+    }elsif($str eq '47'){
+      $str = l;
+    }elsif($str eq '48'){
+      $str = m;
+    }elsif($str eq '49'){
+      $str = n;
+    }elsif($str eq '50'){
+      $str = o;
+    }elsif($str eq '51'){
+      $str = p;
+    }elsif($str eq '52'){
+      $str = q;
+    }elsif($str eq '53'){
+      $str = r;
+    }elsif($str eq '54'){
+      $str = s;
+    }elsif($str eq '55'){
+      $str = t;
+    }elsif($str eq '56'){
+      $str = u;
+    }elsif($str eq '57'){
+      $str = v;
+    }elsif($str eq '58'){
+      $str = w;
+    }elsif($str eq '59'){
+      $str = x;
+    }elsif($str eq '60'){
+      $str = y;
+    }elsif($str eq '61'){
+      $str = z;
+  }
+   
+  my $ret = "";
+  $ret = DecimalTo62digit($ans) if $ans > 0;
+   
+  return $ret.$rem;
+}
+ 
+ 
+sub DecimalFrom62digit {
+  my $seed = shift;
+   
+  chomp($seed);
+  $seed =~ s/^\s+//;
+  $seed =~ s/\s+$//;
+  return undef if $seed =~ m/[^0-9a-zA-Z]/;
+   
+  $seed =~ s/^0+//;
+  $seed =~ tr/a-z/A-Z/; 
+   
+  my @strs    = split("", $seed);
+  my $len     = @strs;
+  my $decimal = 0;
+   
+  for(my $i = 0; $i < $len; $i++){
+    my $str = pop(@strs);
+     
+    if($str eq 'A'){
+      $str = 10;
+    }elsif($str eq 'B'){
+      $str = 11;
+    }elsif($str eq 'C'){
+      $str = 12;
+    }elsif($str eq 'D'){
+      $str = 13;
+    }elsif($str eq 'E'){
+      $str = 14;
+    }elsif($str eq 'F'){
+      $str = 15;
+    }elsif($str eq 'G'){
+      $str = 16;
+    }elsif($str eq 'H'){
+      $str = 17;
+    }elsif($str eq 'I'){
+      $str = 18;
+    }elsif($str eq 'J'){
+      $str = 19;
+    }elsif($str eq 'K'){
+      $str = 20;
+    }elsif($str eq 'L'){
+      $str = 21;
+    }elsif($str eq 'M'){
+      $str = 22;
+    }elsif($str eq 'N'){
+      $str = 23;
+    }elsif($str eq 'O'){
+      $str = 24;
+    }elsif($str eq 'P'){
+      $str = 25;
+    }elsif($str eq 'Q'){
+      $str = 26;
+    }elsif($str eq 'R'){
+      $str = 27;
+    }elsif($str eq 'S'){
+      $str = 28;
+    }elsif($str eq 'T'){
+      $str = 29;
+    }elsif($str eq 'U'){
+      $str = 30;
+    }elsif($str eq 'V'){
+      $str = 31;
+    }elsif($str eq 'W'){
+      $str = 32;
+    }elsif($str eq 'X'){
+      $str = 33;
+    }elsif($str eq 'Y'){
+      $str = 34;
+    }elsif($str eq 'Z'){
+      $str = 35;
+    }elsif($str eq 'a'){
+      $str = 36;
+    }elsif($str eq 'b'){
+      $str = 37;
+    }elsif($str eq 'c'){
+      $str = 38;
+    }elsif($str eq 'd'){
+      $str = 39;
+    }elsif($str eq 'e'){
+      $str = 40;
+    }elsif($str eq 'f'){
+      $str = 41;
+    }elsif($str eq 'g'){
+      $str = 42;
+    }elsif($str eq 'h'){
+      $str = 43;
+    }elsif($str eq 'i'){
+      $str = 44;
+    }elsif($str eq 'j'){
+      $str = 45;
+    }elsif($str eq 'k'){
+      $str = 46;
+    }elsif($str eq 'l'){
+      $str = 47;
+    }elsif($str eq 'm'){
+      $str = 48;
+    }elsif($str eq 'n'){
+      $str = 49;
+    }elsif($str eq 'o'){
+      $str = 50;
+    }elsif($str eq 'p'){
+      $str = 51;
+    }elsif($str eq 'q'){
+      $str = 52;
+    }elsif($str eq 'r'){
+      $str = 53;
+    }elsif($str eq 's'){
+      $str = 54;
+    }elsif($str eq 't'){
+      $str = 55;
+    }elsif($str eq 'u'){
+      $str = 56;
+    }elsif($str eq 'v'){
+      $str = 57;
+    }elsif($str eq 'w'){
+      $str = 58;
+    }elsif($str eq 'x'){
+      $str = 59;
+    }elsif($str eq 'y'){
+      $str = 60;
+    }elsif($str eq 'z'){
+      $str = 61;
+    }
+     
+    my $multiple = 1;
+    for(my $j = 0; $j<$i; $j++){
+      $multiple = $multiple * 36;
+    }
+     
+    $decimal += $multiple*$str;
+  }
+   
+  return $decimal;
+}
